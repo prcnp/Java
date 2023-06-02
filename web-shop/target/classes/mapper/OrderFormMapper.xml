@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xianshuiyu.webshop.demos.web.mapper.OrderFormMapper">
+    <insert id="save">
+        INSERT INTO orderForm
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <!-- submitTime字段 -->
+            <if test="submitTime != null and submitTime != ''">
+                submitTime,
+            </if>
+
+            <!-- consignmentTime字段 -->
+            <if test="consignmentTime != null and consignmentTime != ''">
+                consignmentTime,
+            </if>
+
+            <!-- totalPrice字段 -->
+            <if test="totalPrice != null and totalPrice != ''">
+                totalPrice,
+            </if>
+
+            <!-- remark字段 -->
+            <if test="remark != null and remark != ''">
+                remark,
+            </if>
+
+            <!-- isPayoff字段 -->
+            <if test="isPayoff != null and isPayoff != ''">
+                isPayoff,
+            </if>
+
+            <!-- isConsignment字段 -->
+            <if test="isConsigned != null and isConsigned != ''">
+                isConsigned,
+            </if>
+
+            <!-- username字段 -->
+            <if test="userId != null and userId != ''">
+                userId,
+            </if>
+
+            <!-- orderFormNum字段 -->
+            <if test="orderFormNum!=null and orderFormNum!=''">
+                orderFormNum,
+            </if>
+            <if test="paymentTime!=null and paymentTime!=''">
+                paymentTime,
+            </if>
+            <if test="commodityId!=null and commodityId!=''">
+                commodityId
+            </if>
+
+        </trim>
+
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <!-- submitTime字段 -->
+            <if test="submitTime != null and submitTime != ''">
+                #{submitTime},
+            </if>
+
+            <!-- consignmentTime字段 -->
+            <if test="consignmentTime != null and consignmentTime != ''">
+                #{consignmentTime},
+            </if>
+
+            <!-- totalPrice字段 -->
+            <if test="totalPrice != null and totalPrice != ''">
+                #{totalPrice},
+            </if>
+
+            <!-- remark字段 -->
+            <if test="remark != null and remark != ''">
+                #{remark},
+            </if>
+
+            <!-- isPayoff字段 -->
+            <if test="isPayoff != null and isPayoff != ''">
+                #{isPayoff},
+            </if>
+
+            <!-- isConsigned字段 -->
+            <if test="isConsigned != null and isConsigned != ''">
+                #{isConsigned},
+            </if>
+
+            <!-- userId字段 -->
+            <if test="userId != null and userId != ''">
+                #{UserId},
+            </if>
+
+            <!-- orderFormNum字段 -->
+            <if test="orderFormNum!=null and orderFormNum!=''">
+                #{orderFormNum},
+            </if>
+            <if test="paymentTime!=null and paymentTime!=''">
+                #{paymentTime},
+            </if>
+            <if test="commodityId!=null and commodityId!=''">
+                #{commodityId}
+            </if>
+
+        </trim>
+    </insert>
+
+    <update id="update">
+        UPDATE orderForm
+        <set>
+            <!-- submitTime 字段 -->
+            <if test="submitTime != null and submitTime!=''">
+                submitTime = #{submitTime},
+            </if>
+
+            <!-- consignmentTime 字段 -->
+            <if test="consignmentTime != null and consignmentTime!=''">
+                consignmentTime = #{consignmentTime},
+            </if>
+
+            <!-- totalPrice 字段 -->
+            <if test="totalPrice != null and totalPrice!=''">
+                totalPrice = #{totalPrice},
+            </if>
+
+            <!-- remark 字段 -->
+            <if test="remark != null and remark!=''">
+                remark = #{remark},
+            </if>
+
+            <!-- isPayoff 字段 -->
+            <if test="isPayoff != null and isPayoff!=''">
+                isPayoff = #{isPayoff},
+            </if>
+
+            <!-- isConsignment 字段 -->
+            <if test="isConsigned != null and isConsigned!=''">
+                isConsigned = #{isConsigned},
+            </if>
+
+            <!-- username 字段 -->
+            <if test="userId != null and userId!=''">
+                userId = #{userId},
+            </if>
+            <if test="commodityId!=null and commodityId!=''">
+                CommodityId = #{CommodityId},
+            </if>
+            <if test="userId!=null and userId!=''">
+                UserId = #{UserId}
+            </if>
+        </set>
+        WHERE orderFormID = #{orderFormId}
+    </update>
+</mapper>
