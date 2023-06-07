@@ -110,8 +110,10 @@
                         </goals>
                     </execution>
                 </executions>
+
             </plugin>
         </plugins>
     </build>
 
+    <packaging>jar</packaging>
 </project>
